@@ -1,0 +1,19 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.izquierda {
+  flex: 1;
+}
+
+.derecha {
+  flex: 1;
+  text-align: center;
+}
+
+.sinFondo {
+  background-color: transparent;
+}
