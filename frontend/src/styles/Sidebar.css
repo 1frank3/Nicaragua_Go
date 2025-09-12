@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.eventos {
+  flex: 0 0 250px;
+  background: #2c2c34;
+  padding: 15px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.calendar {
+  flex: 1;
+}
