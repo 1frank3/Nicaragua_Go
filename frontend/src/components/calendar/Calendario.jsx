@@ -24,7 +24,7 @@ export default function Calendario() {
   useEffect(() => {
     const fetchEventos = async () => {
       try {
-        // 1. Feriados móviles desde API (Nicaragua)
+        // 1. api de feriados (eventos)(Nicaragua)
         const res = await axios.get(
           `https://date.nager.at/api/v3/PublicHolidays/${añoActual}/NI`
         );
