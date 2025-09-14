@@ -1,0 +1,105 @@
+/* Estilo base y contenedor principal */
+.homepage-container {
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  width: 100%;
+  background-size: cover; /* La imagen cubre todo el espacio */
+  background-position: center; /* Centra la imagen */
+  position: relative; /* Necesario para el overlay */
+  display: flex;
+  flex-direction: column;
+  color: white; /* Color de texto por defecto */
+}
+
+/* Overlay oscuro para mejorar contraste del texto */
+.homepage-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Overlay negro al 40% de opacidad */
+  z-index: 1; /* Se coloca entre el fondo y el contenido */
+}
+
+/* --- Barra de Navegación --- */
+.main-header {
+  position: relative; /* Asegura que el contenido esté sobre el overlay */
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo más opaco como recomendamos */
+  padding: 0 2rem;
+}
+
+.main-nav ul {
+  list-style: none; /* Quita los puntos de la lista */
+  margin: 0;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: flex-end; /* Alinea los items a la derecha */
+  gap: 2rem; /* Espacio entre cada item del menú */
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none; /* Quita el subrayado por defecto */
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 5px;
+  transition: border-bottom-color 0.3s ease;
+  border-bottom: 2px solid transparent; /* Borde transparente para el efecto hover */
+}
+
+.main-nav a:hover {
+  border-bottom-color: #FFD700; /* Un color dorado al pasar el cursor */
+}
+
+/* --- Contenido Principal (Hero) --- */
+.hero-content {
+  position: relative; /* Sobre el overlay */
+  z-index: 2;
+  flex-grow: 1; /* Ocupa el espacio restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #FFD700; /* Color dorado/amarillo */
+  max-width: 800px;
+  line-height: 1.2;
+  margin: 0;
+  /* Sombra para mejorar legibilidad sobre cualquier fondo */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content .subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Botón de Llamada a la Acción (CTA) --- */
+.cta-button {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #2E7D32; /* Un verde más natural y elegante */
+  border: none;
+  border-radius: 8px; /* Esquinas redondeadas como recomendamos */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+  background-color: #388E3C; /* Un verde ligeramente más claro */
+  transform: scale(1.05); /* Efecto de crecimiento al pasar el cursor */
+}
