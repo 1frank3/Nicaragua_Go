@@ -1,9 +1,8 @@
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import NavBara from "./components/core/NavBara";
-//import folclore from "./assets/image/images.jpg"; //no e pasado la imagen x pereza jaja
 import "./styles/Home.css";
-
+// este home sera eliminado por completo
 export default function Home() {
   return (
     <>

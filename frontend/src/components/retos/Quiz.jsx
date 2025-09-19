@@ -1,4 +1,3 @@
-import React from "react";
 import "../../styles/Quiz.css";
 import { useState, useEffect } from "react";
 import preguntas from "./Preguntas";
@@ -45,7 +44,7 @@ function Quiz() {
             {" "}
             Obtuviste {puntuación} de {preguntas.length}{" "}
           </span>
-          <button onClick={() => (window.location.href = "/")}>
+          <button onClick={() => (window.location.href = "/Quiz")}>
             {" "}
             Volver a jugar
           </button>
@@ -57,6 +56,10 @@ function Quiz() {
             }}
           >
             Ver respuestas
+          </button>
+          <button onClick={() => (window.location.href = "/")}>
+            {" "}
+            Volver al inicio
           </button>
         </div>
       </main>
