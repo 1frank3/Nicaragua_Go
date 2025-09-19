@@ -1,5 +1,6 @@
 import backgroundImage from "../../assets/img/nicaragua-background.webp"
 import  "../../styles/HomeP.css"
+import { Link } from "react-router-dom"
 
 
 export  function HomePage() {
@@ -12,8 +13,16 @@ export  function HomePage() {
     <header className='main-header'>
         <nav className='main-nav'>
             <ul>
-                <li> <a href="#">Mapa</a> </li>
-                <li> <a href="#">Calendario</a> </li>
+                <li>
+                  <Link to ="/"  > 
+                     Inicio
+                  </Link> </li>
+
+                <li> 
+                    <Link to="reto/quiz">
+                    Quiz
+                    </Link>
+                </li>
                 <li> <a href="#">Publicar</a> </li>
                 <li> <a href="#">Contactenos</a> </li>
             </ul>
