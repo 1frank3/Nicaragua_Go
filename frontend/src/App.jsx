@@ -2,8 +2,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { Router } from "./router";
 
-//import Calendario from "./components/calendar/Calendario";
-
 function App() {
   return (
     <>
