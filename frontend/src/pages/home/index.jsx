@@ -1,6 +1,6 @@
-import backgroundImage from "../../assets/img/nicaragua-background.webp"
-import  "../../styles/HomeP.css"
-import { Link } from "react-router-dom"
+import backgroundImage from "../../assets/img/nicaragua-background.webp";
+import "../../styles/HomeP.css";
+import { Link } from "react-router-dom";
 
 export function HomePage() {
   return (
@@ -8,23 +8,25 @@ export function HomePage() {
       className="homepage-container"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-    
-    <header className='main-header'>
-        <nav className='main-nav'>
-            <ul>
-                <li>
-                  <Link to ="/"  > 
-                     Inicio
-                  </Link> </li>
+      <header className="main-header">
+        <nav className="main-nav">
+          <ul>
+            <li>
+              <Link to="/">Inicio</Link>{" "}
+            </li>
 
-                <li> 
-                    <Link to="reto/quiz">
-                    Quiz
-                    </Link>
-                </li>
-                <li> <a href="#">Publicar</a> </li>
-                <li> <a href="#">Contactenos</a> </li>
-            </ul>
+            <li>
+              <Link to="reto/quiz">Quiz</Link>
+            </li>
+            <li>
+              {" "}
+              <a href="#">Publicar</a>{" "}
+            </li>
+            <li>
+              {" "}
+              <a href="#">Contactenos</a>{" "}
+            </li>
+          </ul>
         </nav>
       </header>
 

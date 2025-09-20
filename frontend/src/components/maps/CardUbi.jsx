@@ -1,4 +1,5 @@
 import { Button, Card } from "react-bootstrap";
+import "tailwindcss";
 
 export default function CardUbi({ lugar }) {
   const handleRuta = () => {
@@ -9,7 +10,7 @@ export default function CardUbi({ lugar }) {
     );
   };
   return (
-    <>
+    <div className="flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8 rounded-2xl">
       <Card style={{ width: "15rem" }}>
         <Card.Img variant="top" src={lugar.Imagen} alt={lugar.nombre} />
         <Card.Body>
@@ -20,6 +21,6 @@ export default function CardUbi({ lugar }) {
           </Button>
         </Card.Body>
       </Card>
-    </>
+    </div>
   );
 }
