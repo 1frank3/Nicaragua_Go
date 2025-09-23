@@ -105,6 +105,9 @@ function Quiz() {
   return (
     <main className="app">
       <div className="lado-izquierdo">
+        <button className="salir" onClick={() => (window.location.href = "/")}>
+          X
+        </button>
         <div className="numero-pregunta">
           <span> Pregunta {preguntaActual + 1} de</span> {preguntas.length}{" "}
           {/*lenght es la cantidad e preguntasque hay(seimore se me olvida como funcionaXD) */}

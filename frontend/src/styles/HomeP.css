@@ -1,5 +1,6 @@
 /* Estilo base y contenedor principal */
 .homepage-container {
+  margin-top: 35px;
   height: 100vh; /* Ocupa toda la altura de la pantalla */
   width: 100%;
   background-size: cover; /* La imagen cubre todo el espacio */
@@ -12,56 +13,65 @@
 
 /* Overlay oscuro para mejorar contraste del texto */
 .homepage-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4); /* Overlay negro al 40% de opacidad */
-  z-index: 1; /* Se coloca entre el fondo y el contenido */
+  z-index: 1; /* Entre el fondo y el contenido */
 }
 
 /* --- Barra de Navegación --- */
 .main-header {
-  position: relative; /* Asegura que el contenido esté sobre el overlay */
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.7); /* Fondo más opaco como recomendamos */
+  position: fixed; /* Fijo en pantalla */
+  top: 0; /* Arriba */
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 50; /* Por encima de todo */
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 0 2rem;
 }
+/*.main-header {
+  position: relative; 
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 0 2rem;
+}*/
 
 .main-nav ul {
-  list-style: none; /* Quita los puntos de la lista */
+  list-style: none; /* Quita los puntos */
   margin: 0;
   padding: 1rem 0;
   display: flex;
-  justify-content: flex-end; /* Alinea los items a la derecha */
-  gap: 2rem; /* Espacio entre cada item del menú */
+  justify-content: flex-end; /* Items a la derecha */
+  gap: 2rem; /* Espaciado entre items */
 }
 
 .main-nav a {
   color: white;
-  text-decoration: none; /* Quita el subrayado por defecto */
+  text-decoration: none; /* Quita el subrayado */
   font-size: 1rem;
   font-weight: 500;
   padding-bottom: 5px;
   transition: border-bottom-color 0.3s ease;
-  border-bottom: 2px solid transparent; /* Borde transparente para el efecto hover */
+  border-bottom: 2px solid transparent; /* Para el efecto hover */
 }
 
 .main-nav a:hover {
-  border-bottom-color: #FFD700; /* Un color dorado al pasar el cursor */
+  border-bottom-color: #ffd700; /* Dorado en hover */
 }
 
 /* --- Contenido Principal (Hero) --- */
 .hero-content {
   position: relative; /* Sobre el overlay */
   z-index: 2;
-  flex-grow: 1; /* Ocupa el espacio restante */
+  flex-grow: 1; /* Ocupa lo que resta de la pantalla */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
   text-align: center;
   padding: 2rem;
 }
@@ -69,12 +79,11 @@
 .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #FFD700; /* Color dorado/amarillo */
+  color: #ffd700; /* Dorado */
   max-width: 800px;
   line-height: 1.2;
   margin: 0;
-  /* Sombra para mejorar legibilidad sobre cualquier fondo */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Legibilidad */
 }
 
 .hero-content .subtitle {
@@ -84,22 +93,39 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* --- Botón de Llamada a la Acción (CTA) --- */
+/* --- Botón CTA --- */
 .cta-button {
   margin-top: 2rem;
+  width: 250px;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
-  background-color: #2E7D32; /* Un verde más natural y elegante */
+  background-color: #2e7d32; /* Verde elegante */
   border: none;
-  border-radius: 8px; /* Esquinas redondeadas como recomendamos */
+  border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button:hover {
-  background-color: #388E3C; /* Un verde ligeramente más claro */
-  transform: scale(1.05); /* Efecto de crecimiento al pasar el cursor */
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* --- Responsividad --- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .main-nav ul {
+    justify-content: center; /* Menú centrado en móviles */
+    gap: 1rem;
+  }
 }

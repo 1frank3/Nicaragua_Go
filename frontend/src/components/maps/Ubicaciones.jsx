@@ -1,4 +1,5 @@
-import { Marker, Popup } from "react-leaflet";
+import { Marker, Popup, useMap } from "react-leaflet";
+import { useEffect, useRef } from "react";
 import CardUbi from "./CardUbi";
 
 //opciones a futura
@@ -6,7 +7,7 @@ import CardUbi from "./CardUbi";
 //2-base de datos pero poner un panel oculto y agregar lugares desde ahi(con contraseña)
 //3-directamente un login solo para administrador
 //4-usar array sin base de datos
-const lugares = [
+export const lugares = [
   {
     id: 1,
     nombre: "Basilica Catedral de Leon",
@@ -21,16 +22,31 @@ const lugares = [
     Descripcion:
       "Museo de arte moderno con una de las mejores colecciones en centro America",
     Imagen:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.visitcentroamerica.com%2Fsala-prensa%2Fbanco-fotografico%2Fattachment%2Fgaleria-sala-prensa-visit-centroamerica-nicaragua-catedral-leon%2F&psig=AOvVaw3IKg2PYmp30aL6v2GisnY-&ust=1758249337854000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKCYma-j4Y8DFQAAAAAdAAAAABAK",
+      "https://upload.wikimedia.org/wikipedia/commons/8/84/Museo_Ortiz_Gurdian.jpg",
     coords: [12.434775, -86.88161],
   },
 ];
 
-export default function Ubicaciones() {
+export default function Ubicaciones({ selected }) {
+  const map = useMap();
+  const markerRefs = useRef({}); //guardar ubicacion de cada lugar
+
+  useEffect(() => {
+    if (selected && markerRefs.current[selected.id]) {
+      const marker = markerRefs.current[selected.id];
+      map.flyTo(selected.coords, 15); //mover cámara al lugar y tambien el zoom
+      marker.openPopup(); //abrir popup automáticamente
+    }
+  }, [selected, map]);
+
   return (
     <>
       {lugares.map((lugar) => (
-        <Marker key={lugar.id} position={lugar.coords}>
+        <Marker
+          key={lugar.id}
+          position={lugar.coords}
+          ref={(ref) => (markerRefs.current[lugar.id] = ref)}
+        >
           <Popup>
             {/*aqui es donde va las cards de las ubicaciones */}
             <CardUbi lugar={lugar} />
