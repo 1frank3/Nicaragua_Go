@@ -1,0 +1,15 @@
+/* DefaultLayout.css */
+.default-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* .default-layout main {
+  padding: 2rem;
+} */
+
+.main {
+  flex: 1;
+  background: white; /* o el fondo que quieras */
+}

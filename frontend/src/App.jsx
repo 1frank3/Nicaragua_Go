@@ -8,9 +8,7 @@ function App() {
       <BrowserRouter>
         <Router />
         {/* <Calendario /> */}
-        <div className="bg-green-600 text-white text-3xl p-10">
-      Si ves esto en verde → Tailwind está funcionando 🚀
-    </div>
+       
       </BrowserRouter>
     </>
   );
