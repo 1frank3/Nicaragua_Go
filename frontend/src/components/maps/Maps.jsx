@@ -30,7 +30,7 @@ export default function Maps() {
   return (
     <div style={{ display: "flex" }}>
       {/* Panel lateral con lista de lugares */}
-      <div>
+      <div className="z-10" style={{ margin: "20px", width: "auto" }}>
         <Lugares onSelect={setSelected} />
       </div>
 

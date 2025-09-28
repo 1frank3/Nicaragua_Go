@@ -18,6 +18,9 @@ export function HomePage() {
               <Link to="Quiz">Retos</Link>
             </li>
             <li>
+              <Link to="MapsReact">mapa</Link>
+            </li>
+            <li>
               <a href="#">Publicar</a>{" "}
             </li>
             <li>

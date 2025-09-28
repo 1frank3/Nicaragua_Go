@@ -1,14 +1,25 @@
+.quiz-page {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a2e; /* fondo opcional */
+}
+
+/* Contenedor principal */
 .app {
   background-color: #252d4a;
-  max-width: 650px;
-  min-width: 450px;
-  height: min-content;
+  width: 90%; /* antes min/max fijo */
+  max-width: 650px; /* límite en pantallas grandes */
   min-height: 200px;
   border-radius: 15px;
   padding: 20px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap; /* permite saltar a columna en pantallas pequeñas */
 }
 
 /* PREGUNTAS */
@@ -19,6 +30,7 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
 .salir {
   width: 25px;
   height: 25px;
@@ -59,11 +71,12 @@ button {
   background-color: #252d4a;
   border-radius: 15px;
   display: flex;
-  padding: 5px;
+  padding: 10px;
   justify-content: flex-start;
   align-items: center;
-  border: 5px solid #234668;
+  border: 3px solid #234668;
   cursor: pointer;
+  margin-top: 8px; /* separación entre botones en móvil */
 }
 
 .tiempo-restante {
@@ -103,4 +116,12 @@ button:focus {
 
 button svg {
   margin-right: 5px;
+}
+
+/* RESPONSIVO */
+@media (min-width: 600px) {
+  .lado-izquierdo,
+  .lado-derecho {
+    width: 48%; /* en pantallas medianas-grandes lado a lado */
+  }
 }

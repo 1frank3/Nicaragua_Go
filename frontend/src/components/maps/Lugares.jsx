@@ -1,24 +1,64 @@
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
 import { MapPinIcon } from "@heroicons/react/20/solid";
 import { lugares } from "./Ubicaciones";
 
 export default function Lugares({ onSelect }) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <aside className="w-64 min-h-screen bg-white shadow-md p-4 hidden md:block">
-      <a>HOME | PUBLICAR | JUEGO</a>
-      <h3 className="text-lg font-semibold mb-4">Lugares turísticos</h3>
-      <ul className="space-y-2">
-        {lugares.map((lugar) => (
-          <li key={lugar.id}>
-            <button
-              onClick={() => onSelect(lugar)}
-              className="flex items-center gap-2 w-full px-3 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition"
-            >
-              <MapPinIcon className="w-5 h-5 text-blue-500" />
-              <span className="text-gray-800">{lugar.nombre}</span>
-            </button>
-          </li>
-        ))}
-      </ul>
-    </aside>
+    <>
+      <div className="menu" style={{ display: "flex", gap: "20px" }}>
+        {/* Botón hamburguesa */}
+        <Button variant="dark" onClick={handleShow} className="m-1.5">
+          ☰
+        </Button>
+        <div>
+          <Offcanvas
+            show={show}
+            onHide={handleClose}
+            backdrop={false}
+            placement="start"
+            style={{ backgroundColor: "#111", color: "white" }}
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title>Menú</Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              <div style={{ marginBottom: "1rem" }}>
+                <a href="#">HOME</a> | <a href="#">PUBLICAR</a> |{" "}
+                <a href="#">JUEGO</a>
+              </div>
+
+              <h5>Lugares turísticos</h5>
+              <ul style={{ listStyle: "none", padding: 0 }}>
+                {lugares.map((lugar) => (
+                  <li key={lugar.id} style={{ marginBottom: "0.5rem" }}>
+                    <Button
+                      variant="outline-secondary"
+                      onClick={() => onSelect(lugar)}
+                      className="d-flex align-items-center w-100"
+                    >
+                      <MapPinIcon
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          marginRight: "8px",
+                        }}
+                      />
+                      {lugar.nombre}
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </Offcanvas.Body>
+          </Offcanvas>
+        </div>
+      </div>
+    </>
   );
 }

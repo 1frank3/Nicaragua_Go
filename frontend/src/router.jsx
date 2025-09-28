@@ -4,6 +4,7 @@ import { HomePage } from "./pages/home";
 import Maps from "./components/maps/Maps"; // no funciona con llaves
 import Quiz from "./components/retos/Quiz";
 import Calendar from "./components/calendar/Calendario";
+import MapsReact from "./components/mapsR/MapsReact";
 
 export function Router() {
   return (
@@ -13,6 +14,7 @@ export function Router() {
         <Route path="Quiz" element={<Quiz />} />
         <Route path="Calendar" element={<Calendar />} />
         <Route path="mapa" element={<Maps />} />
+        <Route path="MapsReact" element={<MapsReact />} />
       </Route>
     </Routes>
   );

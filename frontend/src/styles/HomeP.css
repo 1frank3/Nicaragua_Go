@@ -1,5 +1,6 @@
 /* Estilo base y contenedor principal */
 .homepage-container {
+  margin: 0;
   margin-top: 35px;
   height: 100vh; /* Ocupa toda la altura de la pantalla */
   width: 100%;
