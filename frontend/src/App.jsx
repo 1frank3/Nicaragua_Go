@@ -7,8 +7,6 @@ function App() {
     <>
       <BrowserRouter>
         <Router />
-        {/* <Calendario /> */}
-       
       </BrowserRouter>
     </>
   );
