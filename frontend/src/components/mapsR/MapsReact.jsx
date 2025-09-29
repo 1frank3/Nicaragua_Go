@@ -3,8 +3,11 @@ import Map, { Marker } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import MapsDepartamentos from "./MapsDepartamentos";
 import SidebarMaps from "./SidebarMaps";
+//import RouteInstructions from "./RouteInstructions";
 
 export default function MapsReact() {
+  //const mapRef = useRef(null);
+
   // Estado para el estilo del mapa (capa base)
   const [mapStyle, setMapStyle] = useState(
     "mapbox://styles/assassind/cmg1gqijo003y01s6hjre4deb"

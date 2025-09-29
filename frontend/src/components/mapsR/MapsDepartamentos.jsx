@@ -127,7 +127,7 @@ export default function MapsDepartamentos() {
       color="red"
       onClick={(e) => {
         e.originalEvent.stopPropagation(); //para que no se haga zoom al mapa al hacer click
-        setSelected(dep);
+        setSelected(dep); //no e descubieryto como haver zoom al precionar el marker
       }}
     >
       {selected?.nombre === dep.nombre && (

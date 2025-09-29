@@ -1,12 +1,15 @@
 //import Home from "./Home";
 import { BrowserRouter } from "react-router-dom";
 import { Router } from "./router";
+import { PuntuacionProvider } from "./context/PuntuacionContext";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Router />
+        <PuntuacionProvider>
+          <Router />
+        </PuntuacionProvider>
       </BrowserRouter>
     </>
   );

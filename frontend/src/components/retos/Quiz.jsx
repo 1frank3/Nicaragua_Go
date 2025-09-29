@@ -1,34 +1,38 @@
 import "../../styles/Quiz.css";
 import { useState, useEffect } from "react";
 import preguntas from "./Preguntas";
+import { usePuntuacion } from "../../context/PuntuacionContext"; // 👈 importar contexto
 
 function Quiz() {
-  const [preguntaActual, setPreguntaActual] = useState(0); //pregunta en la que esta actualamente abajo se le pone un + 1 x el array
-  const [puntuación, setPuntuación] = useState(0); //puntuacion osea preguntas respondidas bine
+  const { sumar, restar } = usePuntuacion(); // 👈 usamos sumar y restar globales
+
+  const [preguntaActual, setPreguntaActual] = useState(0);
+  const [puntuación, setPuntuación] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [tiempoRestante, setTiempoRestante] = useState(10);
   const [areDisabled, setAreDisabled] = useState(false);
   const [answersShown, setAnswersShown] = useState(false);
 
   function handleAnswerSubmit(isCorrect, e) {
-    if (areDisabled) return; // 👈 evita que se procese si ya está desactivado por tiempo
+    if (areDisabled) return;
 
-    // añadir puntuación al finalizar
-    if (isCorrect) setPuntuación(puntuación + 1);
+    if (isCorrect) {
+      setPuntuación(puntuación + 1); // local
+      sumar(10); // global
+    } else {
+      restar(5); // 👈 si está mal, resta puntos globales
+    }
 
-    // estilo
     e.target.classList.add(isCorrect ? "correct" : "incorrect");
+    setAreDisabled(true);
 
-    setAreDisabled(true); // 👈 bloquea más clics en la misma pregunta
-
-    // pasar a la sigt pregunta
     setTimeout(() => {
       if (preguntaActual === preguntas.length - 1) {
         setIsFinished(true);
       } else {
         setPreguntaActual(preguntaActual + 1);
         setTiempoRestante(10);
-        setAreDisabled(false); // 👈 habilitar botones para la siguiente
+        setAreDisabled(false);
       }
     }, 1500);
   }
@@ -48,11 +52,9 @@ function Quiz() {
         <main className="app">
           <div className="juego-terminado">
             <span>
-              {" "}
-              Obtuviste {puntuación} de {preguntas.length}{" "}
+              Obtuviste {puntuación} de {preguntas.length}
             </span>
             <button onClick={() => (window.location.href = "/Quiz")}>
-              {" "}
               Volver a jugar
             </button>
             <button
@@ -64,9 +66,8 @@ function Quiz() {
             >
               Ver respuestas
             </button>
-            <button onClick={() => (window.location.href = "/")}>
-              {" "}
-              Volver al inicio
+            <button onClick={() => (window.location.href = "/Game")}>
+              Seleccionar juego
             </button>
           </div>
         </main>
@@ -95,9 +96,6 @@ function Quiz() {
               onClick={() => {
                 if (preguntaActual === preguntas.length - 1) {
                   window.location.href = "/";
-                  {
-                    /*recargar la pagina nuevamente y volver a jugar */
-                  }
                 } else {
                   setPreguntaActual(preguntaActual + 1);
                 }
@@ -123,8 +121,7 @@ function Quiz() {
             X
           </button>
           <div className="numero-pregunta">
-            <span> Pregunta {preguntaActual + 1} de</span> {preguntas.length}{" "}
-            {/*lenght es la cantidad e preguntasque hay(seimore se me olvida como funcionaXD) */}
+            <span> Pregunta {preguntaActual + 1} de</span> {preguntas.length}
           </div>
           <div className="titulo-pregunta">
             {preguntas[preguntaActual].titulo}
@@ -132,7 +129,7 @@ function Quiz() {
           <div>
             {!areDisabled ? (
               <span className="tiempo-restante">
-                Tiempo restante: {tiempoRestante}{" "}
+                Tiempo restante: {tiempoRestante}
               </span>
             ) : (
               <button
