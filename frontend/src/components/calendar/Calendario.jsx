@@ -137,7 +137,7 @@ export default function Calendario() {
           height="auto"
           aspectRatio={1.35} // Ajusta para más alto o ancho
           headerToolbar={{
-            start: window.innerWidth < 640 ? "prev,next" : "prev,next today",
+            start: window.innerWidth < 640 ? "prev,next" : "prev,next",
             center: "title",
             end: "dayGridMonth",
           }}
