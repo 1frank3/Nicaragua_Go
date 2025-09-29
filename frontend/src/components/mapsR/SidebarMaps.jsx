@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 }
 export default function SidebarMaps({ setMapStyle }) {
   const [openDepartamentos, setOpenDepartamentos] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
   const [openCapa, setOpenCapa] = useState(false);
 
   const capa = [
@@ -22,9 +21,9 @@ export default function SidebarMaps({ setMapStyle }) {
   ];
 
   return (
-    <div className="fixed top-4 left-4 z-50">
+    <div className="fixed top-25 left-1 z-50">
       {/* Botones */}
-      <div className="text-center space-x-2">
+      <div className="text-center space-x-1">
         <button
           onClick={() => setOpenDepartamentos(true)}
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 
@@ -34,15 +33,7 @@ export default function SidebarMaps({ setMapStyle }) {
         >
           Mapa
         </button>
-        <button
-          onClick={() => setOpenMenu(true)}
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 
-          focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2
-          dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none 
-          dark:focus:ring-blue-800"
-        >
-          Menu
-        </button>
+
         <button
           onClick={() => setOpenCapa(true)}
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 
@@ -101,51 +92,6 @@ export default function SidebarMaps({ setMapStyle }) {
         </ul>
       </div>
 
-      {/* Sidebar Menu */}
-      <div
-        className={`fixed top-0 left-0 z-50 w-40 sm:w-48 md:w-56 h-screen p-4 overflow-y-auto 
-        transition-transform bg-white dark:bg-gray-800 
-        ${openMenu ? "translate-x-0" : "-translate-x-full"}`}
-      >
-        <h5 className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-          Menu
-        </h5>
-        <button
-          onClick={() => setOpenMenu(false)}
-          className="absolute top-2.5 right-2.5 text-gray-400 bg-transparent 
-          hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 
-          dark:hover:bg-gray-600 dark:hover:text-white"
-        >
-          ✕
-        </button>
-
-        <ul className="mt-6 space-y-2 font-medium">
-          <li>
-            <Link
-              className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-              to="/"
-            >
-              Inicio
-            </Link>{" "}
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
-              Publicar
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
-              Contactenos
-            </a>
-          </li>
-        </ul>
-      </div>
       {/* Sidebar Capa*/}
       <div
         className={`fixed top-0 left-0 z-50 w-40 sm:w-48 md:w-56 h-screen p-4 overflow-y-auto 

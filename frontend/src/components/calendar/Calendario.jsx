@@ -118,28 +118,26 @@ export default function Calendario() {
   };
 
   return (
-    <div className="relative flex gap-5">
-      {/* Sidebar */}
-      <div className="m-1">
-        <div className="mb-20">
-          <SiderCalendaar eventos={eventos} mesVisible={mesVisible} />
-        </div>
+    <div className="relative flex gap-1 ">
+      {/* Sidebar quedara eliminado   */}
+      <div className="hidden md:block md:w-1/4 m-1">
         <div>
           <SiderRecordatorio eventos={eventos} />
         </div>
       </div>
 
       {/* Calendario */}
-      <div className="flex-1 m-2 ml-16">
+      <div className="flex-1 m-2 m-2 w-full max-w-full sm:max-w-screen-md">
         <FullCalendar
           plugins={[dayGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"
           events={eventos}
           selectable={true}
           select={handleDateSelect}
-          height="75vh"
+          height="auto"
+          aspectRatio={1.35} // Ajusta para más alto o ancho
           headerToolbar={{
-            start: "prev,next",
+            start: window.innerWidth < 640 ? "prev,next" : "prev,next today",
             center: "title",
             end: "dayGridMonth",
           }}
