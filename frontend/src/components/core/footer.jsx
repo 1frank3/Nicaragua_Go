@@ -27,7 +27,12 @@ export function Footer() {
           >
             <FaInstagram size={20} />
           </a>
-          <a href="#" className="text-yellow-400 transition">
+          <a
+            href="https://wa.me/50588300431"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-yellow-400 transition"
+          >
             <FaWhatsapp size={20} />
           </a>
           <a

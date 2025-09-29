@@ -1,17 +1,18 @@
 import Quizimg from "../../assets/img/Quizimg.jpg";
 import Proximamente from "../../assets/img/proximamente.jpg";
 import Puntuacion from "./Puntuacion";
-import { usePuntuacion } from "../../context/PuntuacionContext"; // 👈 usar contexto
+import MemoryGames from "../../assets/img/menuMemorGAme.png";
+//import { usePuntuacion } from "../../context/PuntuacionContext"; // 👈 usar contexto
 
 export default function MenuRetos() {
-  const { puntos, sumar, restar, reiniciar } = usePuntuacion(); // 👈 ya no useState local
+  //const { puntos, sumar, restar, reiniciar } = usePuntuacion(); // 👈 ya no useState local
 
   const juegos = [
     { nombre: "Quiz", imagen: Quizimg, url: "/Quiz" },
-    { nombre: "Memory Game", imagen: Proximamente, url: "/MemoryGames" },
+    { nombre: "Memory Game", imagen: MemoryGames, url: "/MemoryGames" },
 
-    { nombre: "Mini Puzzle", imagen: Proximamente, url: "/deportes.html" },
-    { nombre: "Ahorcado", imagen: Proximamente, url: "/carreras.html" },
+    { nombre: "Mini Puzzle", imagen: Proximamente, url: "#" },
+    { nombre: "Ahorcado", imagen: Proximamente, url: "#" },
   ];
 
   return (
@@ -37,28 +38,6 @@ export default function MenuRetos() {
             </div>
           </a>
         ))}
-      </div>
-
-      {/* Botones de prueba para manipular puntuación eliminar para videodemo */}
-      <div className="absolute bottom-5 right-5 flex gap-2 ">
-        <button
-          onClick={() => sumar(10)}
-          className="px-3 py-1 bg-green-500 text-white rounded"
-        >
-          +10
-        </button>
-        <button
-          onClick={() => restar(5)}
-          className="px-3 py-1 bg-red-500 text-white rounded"
-        >
-          -5
-        </button>
-        <button
-          onClick={reiniciar}
-          className="px-3 py-1 bg-gray-500 text-white rounded"
-        >
-          Reiniciar
-        </button>
       </div>
     </div>
   );

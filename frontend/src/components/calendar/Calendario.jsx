@@ -26,27 +26,27 @@ function SiderRecordatorio({ eventos }) {
 }
 
 const feriadosFijos = [
-  { title: "Año Nuevo", date: "01-01", departamento: "Nicaragua" },
-  { title: "Día de San Valentín", date: "02-14", departamento: "Nicaragua" },
-  {
-    title: "Día Internacional de la Mujer",
-    date: "03-08",
-    departamento: "Nicaragua",
-  },
-  { title: "Día del Trabajo", date: "05-01", departamento: "Nicaragua" },
-  { title: "Día de la Madre", date: "05-30", departamento: "Nicaragua" },
-  {
-    title: "Día de la Independencia",
-    date: "09-15",
-    departamento: "Nicaragua",
-  },
-  {
-    title: "Día de la Virgen de la Purísima",
-    date: "12-07",
-    departamento: "Nicaragua",
-  },
-  { title: "Inmaculada Concepción", date: "12-08", departamento: "Nicaragua" },
-  { title: "Navidad", date: "12-25", departamento: "Nicaragua" },
+  { title: "Año Nuevo", date: "01-01" },
+  { title: "Día de San Valentín", date: "02-14" },
+  { title: "Día Internacional de la Mujer", date: "03-08" },
+  { title: "Día del Trabajo", date: "05-01" },
+  { title: "Día de la Madre", date: "05-30" },
+  { title: "Día de la Liberación Nacional", date: "07-19" },
+  { title: "Día de la Bandera Nacional", date: "08-14" },
+  { title: "Día de la Revolución", date: "08-19" },
+  { title: "Día del Abuelo y la Abuela", date: "08-26" },
+  { title: "Día del Deportista Nicaragüense", date: "08-28" },
+  { title: "Día Nacional del Estudiante Nicaragüense", date: "09-23" },
+  { title: "Día de la Constitución Política de Nicaragua", date: "09-01" },
+  { title: "Día del Empresario Nicaragüense", date: "09-08" },
+  { title: "La Antorcha de la Libertad", date: "09-11" },
+  { title: "Día de la Batalla de San Jacinto", date: "09-14" },
+  { title: "Día de la Independencia", date: "09-15" },
+  { title: "Día de la Biblia", date: "09-28" },
+  { title: "Día de Santo Domingo de Guzmán", date: "08-01" },
+  { title: "Día de la Virgen de la Purísima", date: "12-07" },
+  { title: "Inmaculada Concepción", date: "12-08" },
+  { title: "Navidad", date: "12-25" },
 ];
 
 export default function Calendario() {

@@ -2,12 +2,30 @@
 import { useState, useEffect, useMemo } from "react";
 import Card from "./Card";
 //despues se mejora laimportacion de imagen
-import OIP from "../../../assets/img/OIP.webp";
-import OIP1 from "../../../assets/img/OIP1.webp";
-import OIP2 from "../../../assets/img/OIP2.webp";
-import OIP3 from "../../../assets/img/OIP3.webp";
-import OIP4 from "../../../assets/img/OIP4.jpeg";
-import OIP5 from "../../../assets/img/OIP5.jpeg";
+import OIP from "../../../assets/img/ImgCards/OIP.webp";
+import OIP1 from "../../../assets/img/ImgCards/OIP1.webp";
+import OIP2 from "../../../assets/img/ImgCards/OIP2.webp";
+import OIP3 from "../../../assets/img/ImgCards/OIP3.webp";
+import OIP4 from "../../../assets/img/ImgCards/OIP4.jpeg";
+import OIP5 from "../../../assets/img/ImgCards/OIP5.jpeg";
+import OIP6 from "../../../assets/img/granada.webp";
+import OIP7 from "../../../assets/img/logo.png";
+import OIP8 from "../../../assets/img/ImgCards/OIP7.jpeg";
+import OIP9 from "../../../assets/img/ImgCards/OIP8.jpeg";
+import OIP10 from "../../../assets/img/ImgCards/OIP9.jpeg";
+import OIP11 from "../../../assets/img/ImgCards/OIP9.png";
+import OIP12 from "../../../assets/img/ImgCards/OIP9.jpeg";
+import OIP13 from "../../../assets/img/ImgCards/OIP10.jpeg";
+import OIP14 from "../../../assets/img/ImgCards/OIP11.jpeg";
+import OIP15 from "../../../assets/img/ImgCards/OIP12.jpeg";
+import OIP16 from "../../../assets/img/ImgCards/OIP134.jpg";
+import OIP17 from "../../../assets/img/ImgCards/OIP14.jpg";
+import OIP18 from "../../../assets/img/ImgCards/th.webp";
+import OIP19 from "../../../assets/img/ImgCards/OIP20.webp";
+import OIP20 from "../../../assets/img/ImgCards/OIP21.webp";
+import OIP21 from "../../../assets/img/ImgCards/OIP22.webp";
+import OIP22 from "../../../assets/img/ImgCards/OIP23.webp";
+import OIP23 from "../../../assets/img/ImgCards/OIP24.jpeg";
 
 // --- CONFIGURACIÓN DEL JUEGO ---
 const TOTAL_LEVELS = 10;
@@ -24,23 +42,24 @@ const PATRIOTIC_IMAGES = [
   OIP3,
   OIP4,
   OIP5,
-  "img6_url",
-  "img7_url",
-  "img8_url",
-  "img9_url",
-  "img10_url",
-  "img11_url",
-  "img12_url",
-  "img13_url",
-  "img14_url",
-  "img15_url",
-  "img16_url",
-  "img17_url",
-  "img18_url",
-  "img19_url",
-  "img20_url",
-  "img21_url",
-  "img22_url",
+  OIP6,
+  OIP7,
+  OIP8,
+  OIP9,
+  OIP10,
+  OIP11,
+  OIP12,
+  OIP13,
+  OIP14,
+  OIP15,
+  OIP16,
+  OIP17,
+  OIP18,
+  OIP19,
+  OIP20,
+  OIP21,
+  OIP22,
+  OIP23,
 ];
 
 export default function MemoryGames() {
