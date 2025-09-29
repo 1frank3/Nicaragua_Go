@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
        colors: {
-        primary: "#012840",   // Azul oscuro (header/footer)
+        // primary: "#012840",   // Azul oscuro (header/footer)
         secondary: "#F29F05", // Amarillo cálido
         accent: "#A52A2A",    // Rojo tierra
       },

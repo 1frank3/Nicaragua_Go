@@ -6,6 +6,10 @@ import Calendar from "./components/calendar/Calendario";
 import Map from "./components/mapsR/MapsReact";
 import Game from "./components/retos/MenuRetos";
 import MemoryGames from "./components/retos/memorGames/MemoryGames";
+import MapsReact from "./components/mapsR/MapsReact";
+import { StorySubmissionPage } from "./components/story";
+import { CulturalLibraryPage } from "./components/CulturalLibrary";
+
 
 export function Router() {
   return (
@@ -17,6 +21,10 @@ export function Router() {
         <Route path="Map" element={<Map />} />
         <Route path="Game" element={<Game />} />
         <Route path="MemoryGames" element={<MemoryGames />} />
+        <Route path="Calendario" element={<Calendar />} />
+        <Route path="mapa" element={<MapsReact />} />
+        <Route path="historia" element= {<StorySubmissionPage/>} />
+        <Route path="biblioteca" element= {<CulturalLibraryPage/>} />
       </Route>
     </Routes>
   );

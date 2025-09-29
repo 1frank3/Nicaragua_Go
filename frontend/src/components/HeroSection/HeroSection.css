@@ -1,0 +1,15 @@
+/* src/components/HeroSection/HeroSection.css */
+
+@reference "tailwindcss";
+
+.hero-container {
+  @apply relative h-screen w-full flex items-center justify-center bg-cover bg-center text-white;
+}
+
+.hero-overlay {
+  @apply absolute top-0 left-0 w-full h-full bg-black opacity-40;
+}
+
+.hero-content {
+  @apply relative z-10 flex flex-col items-center p-4;
+}

@@ -1,49 +1,29 @@
-import { FormGroup, FormLabel, FormControl, InputGroup } from "react-bootstrap";
-import _ from "lodash";
-import { SimpleControl } from "./SimpleControl";
+import { useField, ErrorMessage } from 'formik';
 
-export function TextField({
-  htmlAs = "input",
-  margin = "mb-2",
-  infoText,
-  invalid,
-  valid,
-  ...props
-}) {
-  const {
-    field: { ...fields },
-    form: { errors, touched, ...rest },
-  } = props;
-
-  const fieldErrors = _.get(errors, fields.name);
-
-  invalid =
-    typeof invalid != "undefined"
-      ? invalid && _.get(touched, fields.name)
-      : Boolean(fieldErrors && _.get(touched, fields.name));
-
-  valid =
-    typeof valid != "undefined" ? valid : Boolean(!fieldErrors && fields.value);
+export function TextField({ label, ...props }) {
+  
+  const [field, meta] = useField(props);
 
   return (
-    <FormGroup className={margin}>
-      {props.label && (
-        <FormLabel htmlFor={props.id} className={"label-color"}>
-          {props.label}
-        </FormLabel>
-      )}
-      <InputGroup hasValidation>
-        <SimpleControl as={htmlAs} invalid={invalid} valid={valid} {...props} />
-        {props.inputadornment}
-        {invalid && (
-          <FormControl.Feedback type="invalid">
-            {fieldErrors}
-          </FormControl.Feedback>
-        )}
-      </InputGroup>
-      {!invalid && infoText != false && (
-        <div className="form-text">{infoText}&nbsp;</div>
-      )}
-    </FormGroup>
+    <div className="mb-6">
+      <label 
+        htmlFor={props.id || props.name} 
+        className="block text-lg font-semibold text-gray-800 mb-2"
+      >
+        {label}
+      </label>
+      <input
+        className={`w-full p-4 bg-gray-100 border-2 rounded-lg transition duration-200
+                    focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent
+                    ${meta.touched && meta.error ? 'border-red-500' : 'border-gray-200'}`}
+        {...field} // Pasa name, value, onChange, onBlur
+        {...props}  // Pasa cualquier otra prop como placeholder, type, etc.
+      />
+      <ErrorMessage 
+        component="div" 
+        name={field.name} 
+        className="text-red-600 text-sm mt-1" 
+      />
+    </div>
   );
 }
