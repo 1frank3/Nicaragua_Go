@@ -8,7 +8,7 @@ import OIP2 from "../../../assets/img/ImgCards/OIP2.webp";
 import OIP3 from "../../../assets/img/ImgCards/OIP3.webp";
 import OIP4 from "../../../assets/img/ImgCards/OIP4.jpeg";
 import OIP5 from "../../../assets/img/ImgCards/OIP5.jpeg";
-import OIP6 from "../../../assets/img/granada.webp";
+import OIP6 from "../../../assets/img/ciudades/granada1.webp";
 import OIP7 from "../../../assets/img/logo.png";
 import OIP8 from "../../../assets/img/ImgCards/OIP7.jpeg";
 import OIP9 from "../../../assets/img/ImgCards/OIP8.jpeg";
