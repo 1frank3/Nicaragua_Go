@@ -9,6 +9,7 @@ import MemoryGames from "./components/retos/memorGames/MemoryGames";
 import MapsReact from "./components/mapsR/MapsReact";
 import { StorySubmissionPage } from "./components/story";
 import { CulturalLibraryPage } from "./components/CulturalLibrary";
+import { StoryDetailPage } from "./components/StoryDetailPage";
 
 
 export function Router() {
@@ -25,6 +26,7 @@ export function Router() {
         <Route path="mapa" element={<MapsReact />} />
         <Route path="historia" element= {<StorySubmissionPage/>} />
         <Route path="biblioteca" element= {<CulturalLibraryPage/>} />
+         <Route path="biblioteca/:storySlug" element={<StoryDetailPage />} />
       </Route>
     </Routes>
   );

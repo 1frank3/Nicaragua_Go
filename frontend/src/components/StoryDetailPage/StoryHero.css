@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.story-hero-container {
+  @apply relative h-[50vh] w-full flex items-center justify-center bg-cover bg-center text-white;
+}
+
+.story-hero-overlay {
+  @apply absolute top-0 left-0 w-full h-full bg-black opacity-50;
+}
+
+.story-hero-content {
+  @apply relative z-10 flex flex-col items-center p-4 max-w-4xl mx-auto;
+}

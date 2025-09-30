@@ -8,7 +8,7 @@ export function Header() {
   const navLinks = [
     { title: 'Inicio', path: '/' },
     { title: 'Mapa', path: 'mapa' },
-    { title: 'Quiz', path: 'quiz' },
+    { title: 'Juegos', path: 'Game' },
     { title: 'Biblioteca Cultural', path: 'biblioteca' },
     { title: 'Calendario', path: 'calendario' },
   ]; //todo agregar rutas faltantes 28/09/2025 10:04 pm

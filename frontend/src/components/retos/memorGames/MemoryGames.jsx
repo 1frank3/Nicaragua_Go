@@ -67,14 +67,12 @@ export default function MemoryGames() {
   const [attempts, setAttempts] = useState(INITIAL_ATTEMPTS);
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [gameState, setGameState] = useState("playing"); // playing, levelComplete, gameOver, gameWon
+  const [gameState, setGameState] = useState("playing");
   const [isChecking, setIsChecking] = useState(false);
 
-  // Genera las cartas de cada nivel
   const generateCards = (currentLevel) => {
     const pairsCount = 4 + (currentLevel - 1) * 2;
     const newCards = [];
-
     for (let i = 0; i < pairsCount; i++) {
       const cardContent = {
         contentId: i,
@@ -95,8 +93,6 @@ export default function MemoryGames() {
         isMatched: false,
       });
     }
-
-    // Barajado
     for (let i = newCards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [newCards[i], newCards[j]] = [newCards[j], newCards[i]];
@@ -104,7 +100,6 @@ export default function MemoryGames() {
     setCards(newCards);
   };
 
-  // --- useEffects ---
   useEffect(() => {
     generateCards(level);
   }, [level]);
@@ -113,7 +108,6 @@ export default function MemoryGames() {
     if (flippedCards.length === 2) {
       setIsChecking(true);
       const [firstCard, secondCard] = flippedCards;
-
       if (firstCard.contentId === secondCard.contentId) {
         setCards((prev) =>
           prev.map((c) =>
@@ -149,7 +143,6 @@ export default function MemoryGames() {
     if (attempts <= 0) setGameState("gameOver");
   }, [attempts]);
 
-  // --- Handlers ---
   const handleCardClick = (clickedCard) => {
     if (
       isChecking ||
@@ -158,7 +151,6 @@ export default function MemoryGames() {
       flippedCards.length === 2
     )
       return;
-
     setCards((prev) =>
       prev.map((c) => (c.id === clickedCard.id ? { ...c, isFlipped: true } : c))
     );
@@ -180,7 +172,6 @@ export default function MemoryGames() {
     setGameState("playing");
   };
 
-  // --- Grid dinámico ---
   const gridCols = useMemo(() => {
     const n = cards.length;
     if (n <= 12) return "grid-cols-4";
@@ -189,29 +180,37 @@ export default function MemoryGames() {
     return "grid-cols-7";
   }, [cards.length]);
 
+  // --- INICIO DE CAMBIOS VISUALES ---
   return (
-    <div className="min-h-screen bg-blue-900 text-white flex flex-col items-center p-4 font-sans">
-      <h1 className="text-4xl font-bold mb-2">Memoria Patria</h1>
-      <p className="text-lg mb-4">Encuentra los pares de nuestra Nicaragua</p>
+    <div className="min-h-screen bg-gray-100 text-[#012840] flex flex-col items-center p-4 font-sans">
+      <h1 className="text-4xl font-bold mb-2 text-[#0a1e30]">Memoria Patria</h1>
+      <p className="text-lg mb-4 text-gray-600">
+        Encuentra los pares de nuestra Nicaragua
+      </p>
 
       {/* --- Barra de estado --- */}
-      <div className="w-full max-w-4xl flex justify-between items-center bg-blue-800 p-4 rounded-lg shadow-lg mb-6">
-        <div className="text-2xl font-bold">
-          Nivel: <span className="text-yellow-400">{level}</span>
+      <div className="w-full max-w-4xl flex justify-between items-center bg-[#0a1e30] text-white p-4 rounded-lg shadow-lg mb-6">
+        {/* --- 1. Contenedor para agrupar Nivel e Intentos --- */}
+        <div className="flex items-center space-x-6">
+          <div className="text-2xl font-bold">
+            Nivel: <span className="text-[#F29F05]">{level}</span>
+          </div>
+          <div className="text-2xl font-bold">
+            Intentos: <span className="text-white">{attempts}</span>
+          </div>
         </div>
-        <div className="text-2xl font-bold">
-          Intentos: <span className="text-red-500">{attempts}</span>
-        </div>
+
+        {/* --- 2. Botón de Reiniciar (con un pequeño ajuste de tamaño) --- */}
         <button
           onClick={restartGame}
-          className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-2 px-4 rounded transition-colors"
+          className="!bg-[#F29F05] hover:!bg-[#d98e05] !text-[#012840] font-bold py-2 px-6 rounded-lg text-lg transition-colors"
         >
           Reiniciar
         </button>
       </div>
 
       {/* --- Tablero --- */}
-      <div className={`w-full max-w-4xl grid ${gridCols} gap-4`}>
+      <div className={`w-full max-w-4xl grid ${gridCols} gap-2 md:gap-4`}>
         {cards.map((card) => (
           <Card
             key={card.id}
@@ -224,8 +223,8 @@ export default function MemoryGames() {
 
       {/* --- Modales --- */}
       {gameState !== "playing" && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-          <div className="bg-white text-gray-800 p-8 rounded-xl shadow-2xl text-center">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
+          <div className="bg-white text-gray-800 p-8 rounded-xl shadow-2xl text-center w-full max-w-md">
             {gameState === "levelComplete" && (
               <>
                 <h2 className="text-3xl font-bold text-green-600 mb-4">
@@ -237,7 +236,7 @@ export default function MemoryGames() {
                 </p>
                 <button
                   onClick={goToNextLevel}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition-colors"
+                  className="bg-[#0a1e30] hover:bg-[#1c3a56] text-white font-bold py-3 px-6 rounded-lg text-xl transition-colors"
                 >
                   Siguiente Nivel
                 </button>
@@ -245,7 +244,7 @@ export default function MemoryGames() {
             )}
             {gameState === "gameWon" && (
               <>
-                <h2 className="text-3xl font-bold text-yellow-500 mb-4">
+                <h2 className="text-3xl font-bold text-[#F29F05] mb-4">
                   ¡FELICIDADES!
                 </h2>
                 <p className="text-lg mb-6">
@@ -254,7 +253,7 @@ export default function MemoryGames() {
                 </p>
                 <button
                   onClick={restartGame}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition-colors"
+                  className="bg-[#0a1e30] hover:bg-[#1c3a56] text-white font-bold py-3 px-6 rounded-lg text-xl transition-colors"
                 >
                   Jugar de Nuevo
                 </button>
@@ -270,7 +269,7 @@ export default function MemoryGames() {
                 </p>
                 <button
                   onClick={restartGame}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition-colors"
+                  className="bg-[#0a1e30] hover:bg-[#1c3a56] text-white font-bold py-3 px-6 rounded-lg text-xl transition-colors"
                 >
                   Intentar de Nuevo
                 </button>

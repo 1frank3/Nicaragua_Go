@@ -6,6 +6,7 @@ import volcanMasaya from "../../assets/img/ciudades/volcanMasaya.webp"
 import canonSomoto from "../../assets/img/ciudades/canonSomoto.webp"
 import catedralGranada from "../../assets/img/ciudades/catedralGranada.webp"
 import isletaGranada from "../../assets/img/ciudades/isletaGranada.webp"
+import catedralManaguaImg from "../../assets/img/ciudades/catedralmanagua1.webp"
 
 
 export function CulturalLibraryPage() {
@@ -17,7 +18,8 @@ export function CulturalLibraryPage() {
     { id: 's1', city: 'Madriz', touristSpot: 'Canon de somoto', imageUrl: canonSomoto },
     { id: 'm2', city: 'Masaya', touristSpot: 'Volcá Masaya', imageUrl: volcanMasaya },
     { id: 'g2', city: 'Granada', touristSpot: 'Catedral de Granada', imageUrl: catedralGranada },
-    // Reemplaza estas URLs con imágenes reales de tus ciudades
+    { id: 'm1', city: 'Managua', touristSpot: 'Catedral de Managua', imageUrl: catedralManaguaImg },
+   
   ];
 
   const handleSelectCity = (city) => {
