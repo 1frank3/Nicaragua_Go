@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function RecipeContent({ story }) {
   
   if (!story.ingredients && !story.steps) {

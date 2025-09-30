@@ -16,13 +16,12 @@ function Sidebar({ story }) {
         </ul>
       </div>
 
-      {/* Placeholder para el Mapa Pequeño */}
-      <div className="bg-gray-100 p-6 rounded-lg">
+      {/* <div className="bg-gray-100 p-6 rounded-lg">
         <h3 className="text-xl font-bold mb-4 text-gray-800">Ubicación Geográfica</h3>
         <div className="h-48 bg-gray-300 rounded flex items-center justify-center">
           <p className="text-gray-500">Mapa interactivo aquí</p>
         </div>
-      </div>
+      </div> */}
 
       {/* Placeholder para Historias Relacionadas */}
       <div className="bg-gray-100 p-6 rounded-lg">
