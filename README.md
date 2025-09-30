@@ -63,8 +63,8 @@ Sigue estos pasos para levantar el proyecto en un entorno de desarrollo local.
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone [https://github.com/1frank3/memoria_viva.git]
-    cd TU_REPOSITORIO
+    git clone https://github.com/1frank3/Nicaragua_Go.git
+     cd Nicaragua_Go/frontend
     ```
    ***Nota: La parte del backend aún está en desarrollo y no es necesaria para ejecutar la demostración del frontend.***
 2.  **Configura el Backend (Laravel):**
@@ -118,5 +118,5 @@ Necesitarás dos terminales para correr ambos servidores simultáneamente.
 
 ## 👥 Autores
 
-* [Santos Rafael Toruño Rueda]*
-* [Gerald Francisco Mercado Padilla]
+* Santos Rafael Toruño Rueda*
+* Gerald Francisco Mercado Padilla*
