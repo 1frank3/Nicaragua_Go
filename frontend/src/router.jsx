@@ -23,7 +23,7 @@ export function Router() {
         <Route path="MemoryGames" element={<MemoryGames />} />
         <Route path="Calendario" element={<Calendar />} />
         <Route path="mapa" element={<MapsReact />} />
-        <Route path="compartir-historia" element={<StorySubmissionPage />} />
+        <Route path="/compartir-historia" element={<StorySubmissionPage />} />
         <Route path="biblioteca" element={<CulturalLibraryPage />} />
         <Route path="biblioteca/:storySlug" element={<StoryDetailPage />} />
       </Route>

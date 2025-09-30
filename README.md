@@ -1,6 +1,8 @@
 # Memoria Viva Nicaragua 🇳🇮
 
-Una plataforma web educativa y colaborativa diseñada para preservar, registrar y compartir los saberes populares, culturales y tradiciones de Nicaragua. Este proyecto es un entregable para el rally del Hackathon Nicaragua 2025.
+Una plataforma web educativa y colaborativa diseñada para preservar, registrar y compartir los saberes populares, culturales y tradiciones de Nicaragua. Este proyecto es un entregable para el Hackathon Nicaragua 2025.
+
+Para evaluar el proyecto entregado **solo es necesario ejecutar el Frontend**, ya que utiliza datos de ejemplo (mocks) para demostrar todas las funcionalidades implementadas.
 
 ---
 
@@ -64,7 +66,7 @@ Sigue estos pasos para levantar el proyecto en un entorno de desarrollo local.
     git clone [https://github.com/1frank3/memoria_viva.git]
     cd TU_REPOSITORIO
     ```
-    **La parte backend aun no esta lista**
+   ***Nota: La parte del backend aún está en desarrollo y no es necesaria para ejecutar la demostración del frontend.***
 2.  **Configura el Backend (Laravel):**
     ```bash
     # Entra a la carpeta del backend
