@@ -1,46 +1,46 @@
-import React from 'react';
-import { CTACard } from '../ui/CTACard'; // <-- 1. Importa el nuevo componente
-import { FaPencilAlt, FaBookOpen, FaMapMarkedAlt } from 'react-icons/fa'; // Importa los íconos que necesites
+import React from "react";
+import { CTACard } from "../ui/CTACard"; // <-- 1. Importa el nuevo componente
+import { FaPencilAlt, FaBookOpen, FaMapMarkedAlt } from "react-icons/fa"; // Importa los íconos que necesites
 import { IoCalendarNumber } from "react-icons/io5";
 
 // --- 2. Define la información de todas tus tarjetas en un arreglo ---
 const ctaData = [
   {
     icon: <FaPencilAlt size={40} />,
-    iconBgColor: 'bg-yellow-100',
-    iconTextColor: 'text-yellow-600',
-    title: 'Tienes una historia que contar',
-    buttonText: 'Sube tu historia',
-    linkTo: '/compartir-historia',
+    iconBgColor: "bg-yellow-100",
+    iconTextColor: "text-yellow-600",
+    title: "Tienes una historia que contar",
+    buttonText: "Sube tu historia",
+    linkTo: "/compartir-historia",
   },
   {
     icon: <FaBookOpen size={40} />,
-    iconBgColor: '!bg-yellow-100',
-    iconTextColor: 'text-yellow-600',
-    title: 'Biblioteca cultural de nicaragua',
-    buttonText: 'Ver Biblioteca',
-    linkTo: '/biblioteca',
+    iconBgColor: "!bg-yellow-100",
+    iconTextColor: "text-yellow-600",
+    title: "Biblioteca cultural de nicaragua",
+    buttonText: "Ver Biblioteca",
+    linkTo: "/biblioteca",
   },
   {
     icon: <FaMapMarkedAlt size={40} />,
-    iconBgColor: '!bg-yellow-100',
-    iconTextColor: 'text-yellow-600',
-    title: 'Explora el mapa interactivo',
-    buttonText: 'Ir al Mapa',
-    linkTo: '/mapa',
+    iconBgColor: "!bg-yellow-100",
+    iconTextColor: "text-yellow-600",
+    title: "Explora el mapa interactivo",
+    buttonText: "Ir al Mapa",
+    linkTo: "/mapa",
   },
   {
     icon: <IoCalendarNumber size={40} />,
-    iconBgColor: '!bg-yellow-100',
-    iconTextColor: 'text-yellow-600',
-    title: 'Explora el calendario cultural',
-    buttonText: 'Ir al calendario',
-    linkTo: 'calendario',
+    iconBgColor: "!bg-yellow-100",
+    iconTextColor: "text-yellow-600",
+    title: "Explora el calendario cultural",
+    buttonText: "Ir al calendario",
+    linkTo: "calendario",
   },
   // ¡Puedes añadir más tarjetas aquí fácilmente!
 ];
 
-export function CallToActionSection() {
+export function SubirMemoria() {
   return (
     <section className="bg-gray-50 py-16 sm:py-20">
       <div className="container mx-auto px-4">

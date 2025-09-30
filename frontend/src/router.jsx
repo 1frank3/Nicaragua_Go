@@ -11,7 +11,6 @@ import { StorySubmissionPage } from "./components/story";
 import { CulturalLibraryPage } from "./components/CulturalLibrary";
 import { StoryDetailPage } from "./components/StoryDetailPage";
 
-
 export function Router() {
   return (
     <Routes>
@@ -24,9 +23,9 @@ export function Router() {
         <Route path="MemoryGames" element={<MemoryGames />} />
         <Route path="Calendario" element={<Calendar />} />
         <Route path="mapa" element={<MapsReact />} />
-        <Route path="historia" element= {<StorySubmissionPage/>} />
-        <Route path="biblioteca" element= {<CulturalLibraryPage/>} />
-         <Route path="biblioteca/:storySlug" element={<StoryDetailPage />} />
+        <Route path="compartir-historia" element={<StorySubmissionPage />} />
+        <Route path="biblioteca" element={<CulturalLibraryPage />} />
+        <Route path="biblioteca/:storySlug" element={<StoryDetailPage />} />
       </Route>
     </Routes>
   );
