@@ -1,4 +1,4 @@
-# Memoria Viva Nicaragua 🇳🇮
+# Nicaragua Go
 
 Una plataforma web educativa y colaborativa diseñada para preservar, registrar y compartir los saberes populares, culturales y tradiciones de Nicaragua. Este proyecto es un entregable para el Hackathon Nicaragua 2025.
 
