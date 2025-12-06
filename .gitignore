@@ -1,0 +1,12 @@
+# Dependencias de Backend (Laravel)
+/backend/vendor/
+/backend/.env
+
+# Dependencias de Frontend (React/Vite)
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
